@@ -4,10 +4,10 @@
     <div class="nav-wrapper container center">
     <a href="/" class="brand-logo center"><img src="assets/img/we.png" width="170px" height="95px" alt="Project WE"></a>
     <ul class="right hide-on-med-and-down">
-
+    <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
         {{!--if user is NOT logged in then this li will display--}}
         {{#unless loginStatus}}
-            <li><a href="/login"><i class="material-icons right">person</i>Login</a></li>
+            <li><a href="/login"><i class="material-icons left">person</i>Login</a></li>
         {{/unless}}
 
        {{!--if user is logged in then these li will display--}}
