@@ -11,7 +11,7 @@ $(document).ready(function() {
         var data = new Array();
         var dataArrayFinal = new Array();
         $.getJSON("/aqi16", function(dataAnnual16) {
-            // var county = "Collin";
+
             var county = $("#autocomplete-input").val().trim();
             for (i = 0; i < dataAnnual16.length; i++) {
                 name[i] = dataAnnual16[i].DayQuality;

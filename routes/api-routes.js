@@ -22,5 +22,17 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/dons", function(req, res) {
+        db.Donation.findAll({}).then(function(dbDonation) {
+            res.json(dbDonation);
+        });
 
+    });
+
+    app.get("/totalDonations", function(req, res) {
+        db.Donation.sum("donation").then(function(dbDonation) {
+            res.json(dbDonation);
+            console.log("running total: " + dbDonation);
+        });
+    });
 };
