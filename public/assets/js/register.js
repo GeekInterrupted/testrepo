@@ -1,26 +1,22 @@
 $(document).ready(function() {
     console.log("Register app loaded");
-    //Grab data from sign in form
-    $("#submit_btn").on("click", function(event) {
+    
+    $("#submit_btn").on("click", function(event){
 
         event.preventDefault();
 
+        //Grab data from sign in form
         var userData = {
-            emailOrUsername: $("#emailOrUsername_form").val().trim(),
-            password: $("#password_form").val().trim(),
-
-            name: $("#username_form").val().trim(),
-
+            name: $("#first_name").val().trim() + (" ") + $("#last_name").val().trim(),
+            email: $("#email").val().trim(),
+            password: $("#password").val().trim(),
+            
         };
 
-        console.log(userData);
-
-        $.post("/register", userData, function(res) {
-            //Grab the response from the database if it successfull creates new database
+        $.post("/register", userData, function(res){
+             //Grab the response from the server if it successfull creates new database then redirect user
             if (res) {
-                console.log("Successfully added to the database");
-                console.log(userData);
-                window.location = ('/index-bell');
+                window.location = (res);
             }
         });
 

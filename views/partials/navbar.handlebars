@@ -4,11 +4,26 @@
     <div class="nav-wrapper container center">
     <a href="/" class="brand-logo center"><img src="assets/img/we.png" width="170px" height="95px" alt="Project WE"></a>
     <ul class="right hide-on-med-and-down">
-         <li><a href="/index-bell">newregister</a></li>
         <li><a href="/ranks">ranks(json)</a></li>
         <li><a href="/rankbycity">test link</a></li>
-       <li><a href="/test"><i class="material-icons right">person</i>Login</a></li>
-       <li><a href="/register"><i class="material-icons right">person</i>Login</a></li>
+
+        {{!--if user is NOT logged in then this li will display--}}
+        {{#unless loginStatus}}
+            <li><a href="/login"><i class="material-icons right">person</i>Login</a></li>
+        {{/unless}}
+
+       {{!--if user is logged in then these li will display--}}
+        {{#if loginStatus}}
+            
+            <li> Hello {{dbUser.name}}</li>
+            {{!--if there is a profile picture it will display here--}}
+            {{!--mostly it will come from social media log int--}}
+            {{#if dbUser.profile_picture}}
+            <li><img src="{{dbUser.profile_picture}}"></li>
+            {{/if}}
+            <li><a href="#modal1">Donate</a></li>
+            <li><a href="/logout">Log Out</a></li>
+        {{/if}}
     </ul>
 
     <ul id="nav-mobile" class="side-nav">

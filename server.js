@@ -1,3 +1,6 @@
+// Grab key from .env file applies to Twiiter and facebook Oauth
+require('dotenv').config()
+
 // =================================================================
 // Dependencies
 // =================================================================
@@ -7,7 +10,7 @@ var favicon = require('static-favicon');
 var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 var helpers = require('handlebars-helpers');
-var Handlebars = require('handlebars');
+// var Handlebars = require('handlebars');
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var passport = require("passport");
@@ -64,7 +67,6 @@ app.use(passport.session());
 //import routes to give the server access to them.
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-require("./routes/login-route.js")(app);
 
 
 

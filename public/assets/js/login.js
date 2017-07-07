@@ -1,50 +1,23 @@
 $(document).ready(function() {
     console.log("LogIn app loaded");
-    //Grab data from sign in form
-    $("#sign_in_btn").on("click", function(event) {
+    
+    $("#log_in_btn").on("click", function(event){
 
         event.preventDefault();
 
+        //Grab data from sign in form
         var userData = {
-            emailOrUsername: $("#emailOrUsername_form").val().trim(),
-            password: $("#password_form").val().trim(),
-            name: $("#username_form").val().trim(),
-
-
-
+            email: $("#email").val().trim(),
+            password: $("#password").val().trim(),
         };
-        console.log(userData);
 
         $.post("/login", {
-            name: $("#username_form").val().trim(),
-            email: userData.emailOrUsername,
+            email: userData.email,
             password: userData.password
-        }, (res) => {
-            location.reload(res);
+        },(res)=>{
+            // after successfully logged in the clien side will be forced to redirect to the main page
+            window.location = (res);
         });
 
     });
-
-    // Sign Out functionality
-    $("#sign_out_btn").on("click", function(event) {
-        event.preventDefault();
-        $.get("/logout", (res) => {
-            location.reload(res);
-        })
-    });
-
-    //donation btn
-    $("#donate_btn").on("click", function(event) {
-        event.preventDefault();
-
-        var amount = $("#donation_amount").val().trim()
-        var donationData = {
-            donation: amount
-        }
-        $.post("/donate", donationData, (res) => {
-            location.reload(res);
-        })
-    })
-
-
 });

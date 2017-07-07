@@ -3,7 +3,11 @@ module.exports = function(sequelize, DataTypes) {
         donation: {
             type: DataTypes.INTEGER,
             defaultValue: 0
-        }
+        },
+
+        // grab user id  matches with
+        // users data table
+        userId: DataTypes.INTEGER
 
     }, {
         //User can have multiple Donations
@@ -15,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
                         allowNull: false
                     }
                 });
-            }
+            },
         },
         timestamps: false
     });
