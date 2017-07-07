@@ -28,17 +28,18 @@
         {{#unless loginStatus}}
             <li><a href="/login">Login</a></li>
         {{/unless}}
-            <li><a href="/">Home</a></li>
+            
 
         {{#if loginStatus}}
             
-            <li> Hello {{dbUser.name}}</li>
+            <li style="color: #b6d5d3"> Hello {{dbUser.name}}</li>
         
             {{#if dbUser.profile_picture}}
             <li><img src="{{dbUser.profile_picture}}"></li>
             {{/if}}
             <li><a href="#modal1">Donate</a></li>
             <li><a href="/logout">Log Out</a></li>
+            <li><a href="/">Home</a></li>
         {{/if}}
 
 
