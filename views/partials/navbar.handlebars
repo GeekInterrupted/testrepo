@@ -23,17 +23,20 @@
         {{/if}}
         
         
-        
-        
-        
-        
-   
+    
       </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+
+        {{#unless loginStatus}}
+            <li><a href="/login">Login</a></li>
+        {{/unless}}
+            <li><a href="/">Home</a></li>
+ 
+        {{#if loginStatus}}
+            
+
+            <li><a href="#modal1">Donate</a></li>
+            <li><a href="/logout">Log Out</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
