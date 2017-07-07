@@ -3,7 +3,7 @@ $(document).ready(function() {
     var name = new Array();
     var data = new Array();
     var dataArrayFinal = new Array();
-    $.getJSON('http://localhost:3000/ranks', function(dataRank) {
+    $.getJSON('/ranks', function(dataRank) {
 
         for (i = 0; i < dataRank.length; i++) {
             name[i] = dataRank[i].metroArea;
