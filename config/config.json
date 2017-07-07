@@ -1,0 +1,24 @@
+{
+    "development": {
+        "username": "root",
+        "password": "",
+        "database": "toxic_db",
+        "host": "localhost",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "mnasom2e22hqm0mf",
+        "password": "rj9g495x8qx6payn",
+        "database": "database_production",
+        "host": "b4e9xxkxnpu2v96i.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+        "use_env_variable": "JAWSDB_URL",
+        "dialect": "mysql"
+    }
+}
