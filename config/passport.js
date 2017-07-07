@@ -71,7 +71,7 @@ passport.use(new TwitterStrategy({
 passport.use(new FacebookStrategy({
         clientID: process.env.FB_ID,
         clientSecret: process.env.FB_SECRET,
-        callbackURL: "http://localhost:3000/auth/facebook/callback",
+        callbackURL: "https://shrouded-garden-40780.herokuapp.com/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos', 'emails']
     },
     function(accessToken, refreshToken, profile, cb) {
