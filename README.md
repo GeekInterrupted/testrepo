@@ -1,7 +1,5 @@
 # Project WE
 
-## PROJECT WE
-
 Project Members
 
 * Joe Cabralez
