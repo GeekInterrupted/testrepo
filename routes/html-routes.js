@@ -95,7 +95,7 @@ module.exports = function(app) {
 
     // handle donation route by sending JSON to this route
     app.get("/donation", (req, res)=>{
-        db.User.findAll({
+        db.Donation.findAll({
                 raw: true,
                 order: ['donation']
             }).then(function(dbDonation) {
@@ -107,7 +107,7 @@ module.exports = function(app) {
 
                 // create an obj
                 var donationObj = {
-                userid : dbDonation[i].userid,
+                userid : dbDonation[i].userId,
                 donation: dbDonation[i].donation
             }
                 //push each object into array
