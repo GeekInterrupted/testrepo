@@ -8,9 +8,9 @@
     
         {{!--if user is NOT logged in then this li will display--}}
         {{#unless loginStatus}}
-            <li><a href="/login"><i class="material-icons left">person</i>Login</a></li>
+            <li><a href="/login">Login</a></li>
         {{/unless}}
-            <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+            <li><a href="/">Home</a></li>
        {{!--if user is logged in then these li will display--}}
         {{#if loginStatus}}
             
@@ -24,13 +24,11 @@
             <li><a href="/logout">Log Out</a></li>
         {{/if}}
     </ul>
-<ul class="side-nav" id="mobile-demo">
-      <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
-      <li><a href="/login"><i class="material-icons left">person</i>Login</a></li>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="/">home</i>Home</a></li>
+      <li><a href="/login">Login</a></li>
       <li><a href="/logout">Log Out</a></li>
 
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
+
 </nav>
 </div>
