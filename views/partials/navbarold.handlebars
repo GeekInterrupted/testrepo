@@ -1,0 +1,35 @@
+{{!--Navbar--}}
+<div class="navbar-fixed">
+<nav>
+    <div class="nav-wrapper container center">
+    <a href="/" class="brand-logo center"><img src="assets/img/we.png" width="170px" height="95px" alt="Project WE"></a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+    
+        {{!--if user is NOT logged in then this li will display--}}
+        {{#unless loginStatus}}
+            <li><a href="/login">Login</a></li>
+        {{/unless}}
+            <li><a href="/">Home</a></li>
+       {{!--if user is logged in then these li will display--}}
+        {{#if loginStatus}}
+            
+            <li> Hello {{dbUser.name}}</li>
+            {{!--if there is a profile picture it will display here--}}
+            {{!--mostly it will come from social media log int--}}
+            {{!--{{#if dbUser.profile_picture}}--}}
+            {{!--<li><img src="{{dbUser.profile_picture}}"></li>--}}
+            {{!--{{/if}}--}}
+            <li><a href="#modal1">Donate</a></li>
+            <li><a href="/logout">Log Out</a></li>
+        {{/if}}
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/logout">Log Out</a></li>
+      </ul>
+
+
+</nav>
+</div>
